@@ -1,0 +1,127 @@
+Partner Organization Level:
+======================================================================================================
+SELECT
+	levelid orglevelid, 
+	0 is_org, 
+	level_name name, 
+	cast(levelid AS char(4)) short_name, 
+	SUM(CASE WHEN DATEPART(YEAR, timestamp_rep_activate) = DATEPART(YEAR, GETDATE()) AND DATEPART(MONTH, TIMESTAMP_REP_ACTIVATE) = DATEPART(MONTH, GETDATE()) THEN CASE member_type WHEN 2 THEN 1 WHEN 3 THEN 1 ELSE 0 END ELSE 0 END) cur_reps, 
+	SUM(CASE WHEN DATEPART(YEAR, date_active) = DATEPART(YEAR, getdate()) AND DATEPART(MONTH, date_active) = DATEPART(MONTH, GETDATE()) AND sub = 1 THEN 1 ELSE 0 END) CUR_SUBS, 
+	SUM(CASE MEMBER_TYPE WHEN 2 THEN 1 WHEN 3 THEN 1 ELSE 0 END) TOTAL_REPS, 
+	SUM(CASE WHEN sub = 1 AND ultimate = 0 AND m.member_type = 1 THEN 1 ELSE 0 END) AS TOTAL_SUBS, 
+	SUM(CASE WHEN sub_curractive = 1 AND sub = 1 THEN 1 ELSE 0 END) total_paid_subs, 
+	SUM(CASE WHEN (member_type = 2 OR member_type = 3) AND rep_curractive = 1 AND p.ultimate = 1 THEN 1 ELSE 0 END) total_paid_reps
+FROM         
+	REF_CMS_LEVEL L 
+		LEFT OUTER JOIN MEM_cms_genealogy g ON 
+			g.orglevelid = l.levelid AND 
+			g.timestamp_s BETWEEN l.timestamp_s AND l.timestamp_e AND 
+			memberid__relative = 226002 AND g.timestamp_e = '01/01/2200' 
+		LEFT OUTER JOIN mem_cms m ON 
+			g.memberid = m.memberid AND 
+			getdate() BETWEEN m.timesTAMP_S AND M.TIMESTAMP_e 
+		LEFT OUTER JOIN (
+							SELECT     
+								userid, 
+								MAX(CASE isactive WHEN 1 THEN timestamp_s ELSE NULL END) date_active, 
+								MAX(CASE WHEN timestamp_e = '1/1/2200' AND x.user_type = 'R' THEN isactive ELSE 0 END) AS rep_curractive, 
+								MAX(CASE WHEN timestamp_e = '1/1/2200' AND x.user_type = 'M' THEN isactive ELSE 0 END) AS sub_curractive, 
+								MAX(CASE WHEN p.productid = x.product_id AND x.user_type = 'M' AND timestamp_e = '1/1/2200' AND (isactive = 1 OR istrial = 1) THEN 1 ELSE 0 END) AS sub, 
+								MAX(CASE WHEN x.ultimate = 1 AND timestamp_e = '1/1/2200' AND (isactive = 1 OR istrial = 1) THEN 1 ELSE 0 END) AS ultimate
+							FROM
+								prd_purchasehistory p, 
+								v_cms_prdstates v, 
+								xref_product_user_type x
+							WHERE
+								p.statusid = v.statusid AND 
+								x.product_id = p.productid
+							GROUP BY userid
+						) AS p ON 
+			g.memberid = p.userid 
+		LEFT OUTER JOIN (SELECT
+							gen.memberid, 
+							gen.orglevelid, 
+							gen.memberid__relative
+                         FROM
+							mem_cms_genealogy gen
+                         WHERE
+							gen.orglevelid = 10001) AS orgtree ON 
+			g.memberid = orgtree.memberid AND 
+			g.memberid__relative = orgtree.memberid__relative
+WHERE
+	l.levelid BETWEEN 1 AND 8
+GROUP BY
+	l.levelid, 
+	l.level_name
+order by orglevelid
+
+
+Partner Organization Promotion Counts:
+======================================================================================================
+
+SELECT     o.orgid, o.org_short_name, SUM(CASE g.orglevelid WHEN 1 THEN 1 ELSE 0 END) personal_level, SUM(CASE WHEN g.orglevelid > 1 THEN 1 ELSE 0 END) 
+                      downline
+FROM         (SELECT     gen.memberid, gen.orglevelid, gen.memberid__relative
+                       FROM          mem_cms_genealogy gen
+                       WHERE      gen.orglevelid  <  10001 and gen.timestamp_e = '1/1/2200') orgtree LEFT OUTER JOIN
+                      MEM_CMS_GENEALOGY g ON g.MEMBERID = orgtree.memberid AND g.MEMBERID__RELATIVE = orgtree.memberid__relative AND 
+                      g.MEMBERID__RELATIVE = 226002 AND g.TIMESTAMP_E = '01/01/2200' LEFT OUTER JOIN
+                      MEM_CMS m ON g.MEMBERID = m.MEMBERID AND GETDATE() BETWEEN m.TIMESTAMP_S AND m.TIMESTAMP_E and m.member_type > 1  LEFT OUTER JOIN
+                      REF_CMS_ORG o ON m.orgid = o.ORGID
+WHERE     (g.ORGLEVELID < 10001) AND (m.ORGID > 10001)
+GROUP BY o.orgid, o.org_short_name
+
+
+Director Organiztion Levels:
+======================================================================================================
+
+SELECT 
+	levelid orglevelid, 
+	0 is_org, 
+	level_name name, 
+	cast(levelid AS char(4)) short_name, 
+	SUM(CASE WHEN DATEPART(YEAR, timestamp_rep_activate) = DATEPART(YEAR, GETDATE()) AND DATEPART(MONTH, TIMESTAMP_REP_ACTIVATE) = DATEPART(MONTH, GETDATE()) THEN CASE member_type WHEN 2 THEN 1 WHEN 3 THEN 1 ELSE 0 END ELSE 0 END) cur_reps, 
+
+	SUM(CASE WHEN DATEPART(YEAR, date_active) = DATEPART(YEAR, getdate()) AND DATEPART(MONTH, date_active) = DATEPART(MONTH, GETDATE()) AND sub = 1 THEN 1 ELSE 0 END) CUR_SUBS, 
+	
+	SUM(CASE MEMBER_TYPE WHEN 2 THEN 1 WHEN 3 THEN 1 ELSE 0 END) TOTAL_REPS, 
+	
+	SUM(CASE WHEN sub = 1 AND ultimate = 0 AND m.member_type = 1 THEN 1 ELSE 0 END) AS TOTAL_SUBS, 
+
+	SUM(CASE WHEN sub_curractive = 1 AND sub = 1 THEN 1 ELSE 0 END) total_paid_subs, 
+
+	SUM(CASE WHEN (member_type = 2 OR member_type = 3) AND rep_curractive = 1 AND p.ultimate = 1 THEN 1 ELSE 0 END) total_paid_reps 
+FROM  
+	(SELECT     gen.memberid, gen.orglevelid, gen.memberid__relative
+                            FROM          mem_cms_genealogy gen
+                            WHERE      gen.orglevelid = 10003) AS orgtree LEFT OUTER JOIN mem_cms_genealogy g ON g.memberid = orgtree.memberid AND g.memberid__relative = orgtree.memberid__relative lEFT outer join ref_cms_level l ON g.orglevelid = l.levelid AND g.timestamp_s BETWEEN l.timestamp_s AND l.timestamp_e AND 
+                      g.memberid__relative = 226002 AND g.timestamp_e = '01/01/2200'LEFT OUTER JOIN
+                      mem_cms m ON g.memberid = m.memberid AND getdate() BETWEEN m.timesTAMP_S AND M.TIMESTAMP_e AND m.member_type > 1 LEFT OUTER JOIN
+                          (SELECT     userid, MAX(CASE isactive WHEN 1 THEN timestamp_s ELSE NULL END) date_active, MAX(CASE WHEN timestamp_e = '1/1/2200' AND 
+                                                   x.user_type = 'R' THEN isactive ELSE 0 END) AS rep_curractive, MAX(CASE WHEN timestamp_e = '1/1/2200' AND 
+                                                   x.user_type = 'M' THEN isactive ELSE 0 END) AS sub_curractive, MAX(CASE WHEN p.productid = x.product_id AND x.user_type = 'M' AND
+                                                    timestamp_e = '1/1/2200' AND (isactive = 1 OR
+                                                   istrial = 1) THEN 1 ELSE 0 END) AS sub, MAX(CASE WHEN x.ultimate = 1 AND timestamp_e = '1/1/2200' AND (isactive = 1 OR
+                                                   istrial = 1) THEN 1 ELSE 0 END) AS ultimate
+                            FROM          prd_purchasehistory p, v_cms_prdstates v, xref_product_user_type x
+                            WHERE      p.statusid = v.statusid AND x.product_id = p.productid
+                            GROUP BY userid) AS p ON g.memberid = p.userid 
+WHERE     l.levelid BETWEEN 1 AND 8
+GROUP BY l.levelid, l.level_name
+order by orglevelid
+
+
+Director Organization Promotion Counts:
+=====================================================================================================
+
+SELECT     o.orgid, o.org_short_name, SUM(CASE g.orglevelid WHEN 1 THEN 1 ELSE 0 END) personal_level, SUM(CASE WHEN g.orglevelid > 1 THEN 1 ELSE 0 END) 
+                      downline
+FROM         (SELECT     gen.memberid, gen.orglevelid, gen.memberid__relative
+                       FROM          mem_cms_genealogy gen
+                       WHERE      gen.orglevelid  =  10003 and gen.timestamp_e = '1/1/2200') orgtree LEFT OUTER JOIN
+                      MEM_CMS_GENEALOGY g ON g.MEMBERID = orgtree.memberid AND g.MEMBERID__RELATIVE = orgtree.memberid__relative AND 
+                      g.MEMBERID__RELATIVE = 226002 AND g.TIMESTAMP_E = '01/01/2200' LEFT OUTER JOIN
+                      MEM_CMS m ON g.MEMBERID = m.MEMBERID AND GETDATE() BETWEEN m.TIMESTAMP_S AND m.TIMESTAMP_E and m.member_type > 1  LEFT OUTER JOIN
+                      REF_CMS_ORG o ON m.orgid = o.ORGID
+WHERE     (g.ORGLEVELID < 10001) AND (m.ORGID > 10001)
+GROUP BY o.orgid, o.org_short_name

@@ -1,0 +1,493 @@
+.t4 {
+        font: bold 12pt Arial, Helvetica, sans-serif;
+        color: #696969;
+        padding-top: 0px;
+        padding-bottom: 1px;
+        }
+
+.t4b {
+	font: bold 14pt Verdana, Arial, sans-serif;
+	color: #555555;
+	padding-top: 0px;
+	padding-bottom: 1px;
+	border-bottom:3px solid #7C960B;
+	width: 360px;
+
+	}
+
+.SITEbgtext {
+	font: 10pt/12pt Verdana, Arial, sans-serif;
+	padding-left : 5px;
+	padding-right : 5px;
+	padding-top: 5px;
+	padding-bottom: 15px;
+}
+
+.SITEbgtextsmall{
+	font: 8pt/8pt Verdana, Arial, sans-serif;
+	line-height: 14px;
+	padding-left : 5px;
+	padding-right : 5px;
+	padding-top: 0px;
+	padding-bottom: 15px;
+}
+
+
+.header {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	font-style: normal;
+	color: #999999;
+	font-weight: bold;
+}
+.lefttext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: 14px;
+	color: #000000;
+	font-weight: normal;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.subheader {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	font-style: normal;
+	color: #999999;
+	font-weight: bold;
+	letter-spacing: -1px;
+	padding-left: 5px;
+}
+.enterinfo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #999999;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+}
+.labellink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #999999;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+}
+.labellink a:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #999999;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+	text-decoration: underline;
+}
+.labellink a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #999999;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+	text-decoration: underline;
+
+}
+.labellink a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #999999;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+	text-decoration: underline;
+
+}
+
+.bottomnav a:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	color: #000000;
+	text-decoration: none;
+}
+.bottomnav a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	color: #999999;
+	text-decoration: none;
+
+}
+.bottomnav a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	color: #000000;
+	text-decoration: none;
+
+}
+.steps {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	color: #EFF0D8;
+	font-weight: bold;
+	padding-left: 10px;
+}
+.enterinfoagree {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #000000;
+	font-weight: bold;
+	text-align: left;
+	padding-right: 5px;
+}
+.note {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	font-style: normal;
+	color: #555555;
+	font-weight: bold;
+	letter-spacing: -1px;
+	padding-left: 5px;
+	line-height: 22px;
+}
+.note {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	font-style: normal;
+	color: #555555;
+	font-weight: bold;
+	letter-spacing: -1px;
+	padding-left: 5px;
+	line-height: 22px;
+}
+.required {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #ff0000;
+	text-align: right;
+	padding-right: 5px;
+}
+.formerror {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #ff0000;
+	text-align: right;
+	padding-right: 5px;
+}
+.SIGNtablehelp {
+	font: 10pt/12pt Verdana, Arial, sans-serif;
+	padding-left : 5px;
+	padding-right : 5px;
+	padding-top: 5px;
+	padding-bottom: 15px;
+}
+
+
+
+.signoutlink a:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #EFF0D8;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+	text-decoration: none;
+}
+.signoutlink a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #EFF0D8;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+	text-decoration: none;
+}
+.signoutlink a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #AAAAAA;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+	text-decoration: underline;
+
+}
+
+.leftnavheader {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+\\	color: #DDEDC5;
+	color: #EFF0D8;
+	padding-left: 8px;
+	border-top: 1px solid #455C1D;
+	border-right: 1px none #455C1D;
+	border-bottom: 1px none #455C1D;
+	border-left: 1px none #455C1D;
+}
+
+
+	.BIZTtable {
+	font: 10pt/12pt Verdana, Arial, sans-serif;
+	border-bottom: 5px solid #96C64C;
+	border-left: 1px solid #96C64C;
+	border-right: 1px solid #96C64C;
+	border-top: 1px solid #96C64C;
+}
+
+	.BIZTtableOrange {
+	font: 10pt/12pt Verdana, Arial, sans-serif;
+	border-bottom: 5px solid #A4BD6C;
+	border-left: 1px solid #A4BD6C;
+	border-right: 1px solid #A4BD6C;
+	border-top: 1px solid #A4BD6C;
+}
+
+	.BIZTtableGreen {
+	font: 10pt/12pt Verdana, Arial, sans-serif;
+	border-bottom: 5px solid #A4BD6C;
+	border-left: 1px solid #A4BD6C;
+	border-right: 1px solid #A4BD6C;
+	border-top: 1px solid #A4BD6C;
+}
+
+	.BIZTtableoptbase{
+    border-top: 1px solid #96C64C;
+    border-left: 1px solid #96C64C;
+	border-right: 1px solid #96C64C;
+    background: #DDFAD0;
+}
+
+	.BIZTtableopt{
+        */background: #DDFAD0;*/
+        background: #D5EDB0;
+	font: 10pt/12pt Verdana, Arial, sans-serif;
+}
+
+.BIZTtableoptP { background: #6BB2D6; font: 10pt/12pt Verdana, Arial, sans-serif; }
+.BIZTtableoptD { background: #E8EF67; font: 10pt/12pt Verdana, Arial, sans-serif; }
+.BIZTtableoptS { background: #FFACD4; font: 10pt/12pt Verdana, Arial, sans-serif; }
+.BIZTtableoptE { background: #BCBCB1; font: 10pt/12pt Verdana, Arial, sans-serif; }
+
+
+.BIZTsearch { font: 9pt/12pt Arial, Verdana, sans-serif; background: #D5EDB0; }
+.BIZTsearchP { font: 9pt/12pt Arial, Verdana, sans-serif; background: #EBF5F8; }
+.BIZTsearchD { font: 9pt/12pt Arial, Verdana, sans-serif; background: #FCFCEC; }
+.BIZTsearchS { font: 9pt/12pt Arial, Verdana, sans-serif; background: #FCFBFC; }
+.BIZTsearchE { font: 9pt/12pt Arial, Verdana, sans-serif; background: #F6F6E9; }
+.BIZTsearchERow TD {background: #F6F6E9; }
+.BIZTsearchPRow TD {background: #FCFCEC; }
+
+
+
+
+/*-- {TABLE_HEADER_CLASS} genealogySummaryMatrix.tpl -- header rows --*/
+.BIZTtableheader  { font: bold 12px/14px Verdana, Arial, sans-serif; color: #EFF0D8; background: #96C64C; /* green */ }
+.BIZTtableheaderP { font: bold 12px/14px Verdana, Arial, sans-serif; color: #000000; background: #6BB2D6; /* blue */ }
+.BIZTtableheaderR { font: bold 12px/14px Verdana, Arial, sans-serif; color: #000000; background: #6BB2D6; /* blue */ }
+.BIZTtableheaderD { font: bold 12px/14px Verdana, Arial, sans-serif; color: #000000; background: #E8EF67; /* yellow */ }
+.BIZTtableheaderS { font: bold 12px/14px Verdana, Arial, sans-serif; color: #000000; background: #FFACD4; /* pink */ }
+.BIZTtableheaderE { font: bold 12px/14px Verdana, Arial, sans-serif; color: #000000; background: #BCBCB1; /* silver */ }
+
+/*-- {TABLE_ROW_CLASS} genealogySummaryLevelRow.tpl -- body rows-- */
+.SITErowodd    { font: 9pt Verdana, Verdana, sans-serif; background: #EFF0D8; border-bottom: 1px solid #96C64C; }
+.BIZTtableRowP { font: 9pt Verdana, Verdana, sans-serif; background: #EBF5F8; border-bottom: 1px solid #6BB2D6; }
+.BIZTtableRowR { font: 9pt Verdana, Verdana, sans-serif; background: #EBF5F8; border-bottom: 1px solid #6BB2D6; }
+.BIZTtableRowD { font: 9pt Verdana, Verdana, sans-serif; background: #FCFCEC; border-bottom: 1px solid #E8EF67; }
+.BIZTtableRowS { font: 9pt Verdana, Verdana, sans-serif; background: #FCFBFC; border-bottom: 1px solid #FFACD4; }
+.BIZTtableRowE { font: 9pt Verdana, Verdana, sans-serif; background: #F6F6E9; border-bottom: 1px solid #BCBCB1; }
+
+
+        .REVRtablemarket {
+    border-bottom: 5px solid #96C64C;
+    border-left: 1px solid #96C64C;
+    border-right: 1px solid #96C64C;
+    border-top: 1px solid #96C64C;
+    background: #ffffff
+}
+
+/*-- {TABLE_CLASS} genealogySummaryMatrix.tpl  -- bottom row --*/
+.REVRtablemarketP { border-bottom: 5px solid #6BB2D6; border-left: 1px solid #6BB2D6; border-right: 1px solid #6BB2D6;
+    border-top: 1px solid #6BB2D6; background: #D2EDF7; }
+.REVRtablemarketR { border-bottom: 5px solid #6BB2D6; border-left: 1px solid #6BB2D6; border-right: 1px solid #6BB2D6;
+    border-top: 1px solid #6BB2D6; background: #D2EDF7; }
+.REVRtablemarketD { border-bottom: 5px solid #e8ef67; border-left: 1px solid #e8ef67; border-right: 1px solid #e8ef67;
+    border-top: 1px solid #e8ef67; background: #ffffff }
+.REVRtablemarketS { border-bottom: 5px solid #ff99cc; border-left: 1px solid #ff99cc; border-right: 1px solid #ff99cc;
+    border-top: 1px solid #ff99cc; background: #ffffff }
+.REVRtablemarketE { border-bottom: 5px solid #bcbcb1; border-left: 1px solid #bcbcb1; border-right: 1px solid #bcbcb1;
+    border-top: 1px solid #bcbcb1; background: #ffffff }
+
+/*-- {PAID_COLOR} genealogyDetailsRow.tpl & genealogyDownlineLevelRow.tpl -- Paid row BG color --*/
+.SITErowpaid, SITErowpaid a, SITErowpaid a:visited, SITErowpaid a:active {
+    font: 10pt/12pt Verdana, Arial, sans-serif; background: #F3e5b3; border-bottom: 1px solid #96C64C; }
+.SITErowpaidP { font: 10pt/12pt Verdana, Arial, sans-serif; background: #F3e5b3; border-bottom: 1px solid #6BB2D6; }
+.SITErowpaidD { font: 10pt/12pt Verdana, Arial, sans-serif; background: #F3e5b3; border-bottom: 1px solid #E8E767; }
+.SITErowpaidS { font: 10pt/12pt Verdana, Arial, sans-serif; background: #F3e5b3; border-bottom: 1px solid #FFACD4; }
+.SITErowpaidE { font: 10pt/12pt Verdana, Arial, sans-serif; background: #F3e5b3; border-bottom: 1px solid #BCBCB1; }
+
+
+
+	.BIZTtablemarket {
+    border-left: 1px solid #96C64C;
+    border-right: 1px solid #96C64C;
+    border-top: 1px solid #96C64C;
+    background: #EFF0D8
+}
+
+  .SITErowpayment {
+	BACKGROUND: #dddddd;
+        FONT: bold 9pt Verdana, Verdana, sans-serif;
+        COLOR: #96C64C;
+        BORDER-BOTTOM: #006 1px solid
+}
+	.SITEbgphp {
+	font: 10pt/12pt Arial, Verdana, sans-serif;
+	padding-left : 5px;
+	padding-right : 5px;
+	padding-top: 5px;
+	padding-bottom: 15px;
+}
+	
+	.SITEbglght {
+	background: #FFFFFF;
+	font: 10pt/12pt Arial, Verdana, sans-serif;
+}
+		
+	.SITEbgtext {
+	background: #FFFFFF;
+	font: 10pt/12pt Arial, Verdana, sans-serif;
+	padding-left : 5px;
+	padding-right : 5px;
+	padding-top: 5px;
+	padding-bottom: 15px;
+}
+
+  .SITEmore {
+  font: 8pt Arial, Verdana, sans-serif;
+  text-align: right;
+}
+
+	.SITEright {
+	font: 10pt/13pt Arial, Verdana, sans-serif;
+	color: #000000;
+	text-align : right;
+	padding-right: 4px;
+}
+
+	.SITErightInvalid {
+	font: 10pt/13pt Arial, Verdana, sans-serif;
+	color: #CC0000;
+	text-align: right;
+	padding-right: 4px;
+}
+
+  .SITEroweven {
+  font: 9pt Arial, Verdana, sans-serif;
+  background: #FFFFFF;
+  border-bottom: 1px solid #000066;
+}
+
+  .SITErowpayment {
+	BACKGROUND: #dddddd; FONT: bold 9pt Arial, Verdana, sans-serif; COLOR: #63636B; BORDER-BOTTOM: #006 1px solid
+}
+  
+.SITErowodd    { 	font: 9pt Verdana, Verdana, sans-serif; 
+					background: #EFF0D8; 
+					border-bottom: 1px solid #96C64C; 
+					}
+
+
+  .SITErowpaid {
+  font: 9pt Arial, Verdana, sans-serif;
+  background: #6BB2D6;
+/*  border-bottom: 1px solid #000066;*/
+}
+
+
+	.SITEtext {
+	font : 10pt/12pt Arial, Verdana, sans-serif;
+}
+.forgotpassText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #0000CC;
+	text-decoration: none;
+	font-weight: bold;
+}
+.bodyLINK  a:visited {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: #AAAAAA;
+	TEXT-DECORATION: underline;
+	line-height: 20px;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+}
+.bodyLINK a:active {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: #4E6DAF;
+	TEXT-DECORATION: underline;
+	line-height: 20px;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+}
+.bodyLINK  a:hover{
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: #6A9913;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+}
+.bodyLINK  a:link {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: #4E6DAF;
+	TEXT-DECORATION: underline;
+	line-height: 20px;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+}
+.SUBNAVLINK  a:visited {
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12px;
+	COLOR: #999999;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+}
+.SUBNAVLINK a:active {
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+	TEXT-DECORATION: underline;
+	line-height: 20px;
+
+}
+.SUBNAVLINK  a:hover{
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12px;
+	COLOR: #072B61;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+}
+.SUBNAVLINK  a:link {
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12px;
+	COLOR: #666666;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+}
